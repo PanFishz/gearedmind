@@ -1,0 +1,37 @@
+<%= layout('layouts/boilerplate') %>
+
+    <div class="row py-3">
+        <h2 class="text-center form-label">Edit House Rule</h2>
+        <div class="col-6 offset-3">
+            <form action="/gearedmind/rules/<%=houserule._id%>/rule/<%=rule._id%>?_method=PUT" method="POST" id="plan"
+                class="mb-3 validated-form" novalidate enctype="multipart/form-data">
+                <div class="mb-3 mx-auto">
+                    <h1 class="text-center form-label">
+                        <%=houserule.gameTitle%>
+                    </h1>
+                </div>
+                <div class="mb-3 mx-auto">
+                    <label for="houseRules" class="form-label">House Rule:</label>
+                    <textarea class="form-control overflow-auto" rows="10" style="overflow:hidden" id="houseRules"
+                        name="rule" required><%=rule.rule%></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3 mx-auto">
+                    <% rule.images.forEach((img, i)=> { %>
+                        <img src="<%=img.thumbnail%>" class="img-thumbnail" alt="">
+                        <div class="form-check-inline">
+                            <input type="checkbox" id="image-<%=i%>" name="deleteImages[]" value="<%=img.filename%>">
+                        </div>
+                        <% }) %>
+                </div>
+                <div class="mb-3 mx-auto">
+                    <label for="gameImages" class="form-label">Add images</label>
+                    <input class="form-control" type="file" id="gameImages" name="gameImages" multiple>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <script src="/javascripts/listener.js"></script>

@@ -1,0 +1,41 @@
+<% layout('layouts/boilerplate') %>
+
+    <section class="container-fluid p-0">
+        <div class="row">
+
+            <% for (let houserule of houserules) { %>
+                <div class="card col-lg-6 px-0 align-items-center">
+                    <div class="card-body col-10 col-lg-8 text-center">
+                        <h5 class="card-title">
+                            <%= houserule.gameTitle %>
+                        </h5>
+                        <% if (houserule.rules[0].images.length> 0) { %>
+                            <img src="<%=houserule.rules[0].images[0].url%>"" class=" d-block w-100" alt="...">
+
+                            <% } %>
+
+                    </div>
+                    <ul class="list-group list-group-flush align-items-center text-center">
+                        <% for (let rule of houserule.rules) { %>
+                            <li class="list-group-item">
+                                <span>Submitted by:
+                                    <%= rule.author.username %>
+                                </span>
+                                <p>
+                                    <%= rule.rule %>
+                                </p>
+                            </li>
+                            <% } %>
+
+                    </ul>
+
+                    <div class="card-body">
+                        <button class="btn btn-primary"><a href="/gearedmind/rules/<%= houserule._id%>"
+                                class="card-link">Learn More</a></button>
+                        <button class="btn btn-primary"></buttonclass><a href="/gearedmind/rules/<%= houserule._id%>"
+                                class="card-link">Feedback</a></button>
+                    </div>
+                </div>
+                <% }%>
+        </div>
+    </section>

@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row">
+        <h1 class="text-center form-label">New House Rule</h1>
+        <div class="col-6 offset-3">
+            <form action="/gearedmind/rules" method="POST" class="mb-3 validated-form" novalidate
+                enctype="multipart/form-data">
+
+                <div class="mb-3 mx-auto">
+                    <label for="gameTitle" class="form-label">Game Title</label>
+                    <input type="text" class="form-control" id="gameTitle" aria-describedby="gameTitle" name="gameTitle"
+                        required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="mb-3 mx-auto">
+                    <label for="gameImages" class="form-label">Upload Images:</label>
+                    <input type="file" class="form-control" id="gameImages" aria-describedby="gameImages"
+                        name="gameImages" multiple>
+                </div>
+                <div class="mb-3 mx-auto">
+                    <label for="houseRules" class="form-label">House Rules:</label>
+                    <textarea class="form-control" id="houseRules" name="rule" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>

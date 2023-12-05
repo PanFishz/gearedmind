@@ -1,0 +1,27 @@
+<% layout('layouts/boilerplate') %>
+    <div class="row py-3">
+        <h1 class="text-center form-label">Add a House Rule</h1>
+        <div class="col-6 offset-3">
+            <form action="/gearedmind/rules/<%=houserule._id%>?_method=PATCH" method="POST" id="plan"
+                class="mb-3 validated-form" novalidate enctype="multipart/form-data">
+
+                <div class="mb-3 mx-auto">
+                    <h2 class="text-center form-label card-title">
+                        <%=houserule.gameTitle%>
+                    </h2>
+                </div>
+                <div class="mb-3 mx-auto">
+                    <div class="mb-3 mx-auto"><label for="newrule" class="form-label">New House Rule:</label></div>
+                    <textarea class="form-control overflow-auto" rows="10" style="overflow:hidden" name="rule"
+                        required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="mb-3">
+                        <label for="images" class="form-label">Add images</label>
+                        <input class="form-control" type="file" id="images" name="gameImages" multiple>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>

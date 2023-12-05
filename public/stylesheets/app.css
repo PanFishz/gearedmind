@@ -1,0 +1,146 @@
+.navbar-brand {
+    font-size: 30px;
+    line-height: 1;
+    font-family: 'Tourney', sans-serif;
+    color: rgb(253, 211, 97);
+    font-weight: 400;
+}
+
+body {
+    background-color: black;
+    padding-top: 65px;
+}
+
+#navbarNav a {
+    font-family: 'Tourney', sans-serif;
+    color: rgb(249, 233, 139);
+    font-weight: 200;
+    font-size: 25px;
+    transition: color 500ms;
+}
+
+#navbarNav a:hover {
+    color: rgb(252, 244, 0);
+    font-style: italic;
+}
+
+#brandname a:hover {
+    color: rgb(249, 233, 139);
+}
+
+.navbar-toggler-icon {
+    background-image: url("../imgs/three-dots-vertical.svg");
+}
+
+.navbar {
+    background-color: black;
+}
+
+.dropdown-item {
+    background-color: rgb(72, 72, 72);
+    color: antiquewhite;
+}
+
+#dropdown a:hover {
+    color: pink;
+    background-color: rgb(121, 121, 121);
+}
+
+.dropdown-divider {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.card {
+    border-radius: 0;
+    background-color: black;
+}
+
+.card-title {
+
+    font-family: 'Tourney', sans-serif;
+    color: rgb(253, 211, 97);
+    font-weight: 200;
+    font-size: 1.8rem;
+}
+
+.card-text,
+.form-label,
+.card-body {
+    color: rgb(215, 215, 215);
+}
+
+.list-group,
+.list-group-item {
+    color: rgb(160, 160, 158);
+    width: 80%;
+    background-color: rgb(0, 0, 0);
+}
+
+.btn-primary {
+    background-color: rgb(253, 211, 97);
+    border: 0;
+}
+
+
+.btn-primary a {
+    text-decoration: none;
+    color: black;
+}
+
+footer a {
+    color: rgb(133, 134, 134);
+}
+
+.btn-primary:hover {
+    background-color: rgb(228, 169, 67);
+
+}
+
+h5 {
+    color: rgb(248, 248, 172);
+    font-size: 1.5em;
+    font-family: 'Tourney', sans-serif;
+    background-color: black;
+    font-weight: 200;
+}
+
+#navbarNav,
+#dropdown {
+    text-align: center;
+}
+
+@media (min-width:960px) {
+
+    #navbarNav,
+    #dropdown {
+        text-align: start;
+    }
+
+}
+
+footer {
+    height: 5em;
+    background-color: rgb(228, 169, 67);
+}
+
+.content,
+.form-contact {
+    padding: 35px 20px;
+    color: rgb(219, 197, 72);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: left;
+}
+
+
+
+.form-contact:nth-child(2) {
+    padding-top: 0;
+}
+
+#submit-btn {
+    color: blueviolet;
+    width: 300px;
+}
