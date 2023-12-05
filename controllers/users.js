@@ -16,11 +16,11 @@ module.exports.registrationNewUser = async (req, res) => {
                 return next(err);
             }
             req.flash('success', 'Successfully registered');
-            res.redirect('/gearedmind')
+            res.redirect('/')
         })
     } catch (e) {
         req.flash('error', 'Either username or email is already in use');
-        res.redirect('/gearedmind/users/register');
+        res.redirect('/users/register');
     }
 }
 
@@ -30,7 +30,7 @@ module.exports.renderLoginForm = (req, res) => {
 
 module.exports.loginUser = (req, res) => {
     req.flash('success', 'Successfully logged in');
-    const redirectUrl = res.locals.returnTo || '/gearedmind'
+    const redirectUrl = res.locals.returnTo || '/'
     res.redirect(redirectUrl)
 }
 
@@ -40,6 +40,6 @@ module.exports.logoutUser = (req, res, next) => {
             return next(err);
         }
         req.flash('success', 'Successfully logged out');
-        res.redirect('/gearedmind')
+        res.redirect('/')
     })
 }

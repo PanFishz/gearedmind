@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Gmgame = require('../../models/gmgame.js');
 const gmgames = require('./gmgames.js');
 
-mongoose.connect('mongodb://localhost:27017/Gearedmind')
+mongoose.connect('mongodb+srv://rinmeyers:gFSJfwwE3JItN9b5@cluster0.opyva2x.mongodb.net/?retryWrites=true&w=majority')
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error:"));

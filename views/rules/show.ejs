@@ -10,9 +10,9 @@
 
                     <div class="card-body">
 
-                        <button class="btn btn-primary"><a href="/gearedmind/rules/<%=houserule._id%>/add"
-                                class="card-link">Add a New Rule</a></button>
-                        <button class="btn btn-primary"><a href="/gearedmind/rules" class="card-link">Back</a></button>
+                        <button class="btn btn-primary"><a href="/rules/<%=houserule._id%>/add" class="card-link">Add a
+                                New Rule</a></button>
+                        <button class="btn btn-primary"><a href="/rules" class="card-link">Back</a></button>
                     </div>
                 </div>
                 <ul class="list-group list-group-flush align-items-center text-center">
@@ -22,10 +22,10 @@
                             <% if(currentUser && rule.author.equals(currentUser._id)) { %>
                                 <div class="card-body d-inline">
                                     <button class="btn btn-primary"><a
-                                            href="/gearedmind/rules/<%=houserule._id%>/rule/<%=rule._id%>/edit"
+                                            href="/rules/<%=houserule._id%>/rule/<%=rule._id%>/edit"
                                             class="card-link">Edit</a></button>
                                     <form class="d-inline"
-                                        action="/gearedmind/rules/<%=houserule._id%>/rule/<%=rule._id%>?_method=DELETE"
+                                        action="/rules/<%=houserule._id%>/rule/<%=rule._id%>?_method=DELETE"
                                         method="POST">
                                         <button class="btn btn-primary">Delete</button>
                                     </form>

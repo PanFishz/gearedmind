@@ -23,7 +23,7 @@ module.exports.postNewRule = async (req, res) => {
     newgame.rules.push(newrule)
     await newrule.save();
     await newgame.save();
-    res.redirect('/gearedmind/rules')
+    res.redirect('/rules')
 }
 
 module.exports.renderNewRuleForm = (req, res) => {
@@ -67,7 +67,7 @@ module.exports.editRule = async (req, res) => {
     }
     //const updatedHouserule = await Rule.findByIdAndUpdate(ruleid, { rule: req.body.rules })
     req.flash('success', 'Successfully updated campground!');
-    res.redirect(`/gearedmind/rules/${id}`)
+    res.redirect(`/rules/${id}`)
 }
 
 module.exports.deleteRule = async (req, res) => {
@@ -76,7 +76,7 @@ module.exports.deleteRule = async (req, res) => {
     await Houserule.findByIdAndUpdate(id, { $pull: { rule: ruleId } });
     await Rule.findByIdAndDelete(ruleId)
 
-    res.redirect(`/gearedmind/rules/${id}`)
+    res.redirect(`/rules/${id}`)
 }
 
 module.exports.renderAddRuleForm = async (req, res) => {
@@ -99,7 +99,7 @@ module.exports.renderAddRuleForm = async (req, res) => {
 //     await houserule.save()
 //     houserule.save();
 //     //Houserule.findOneAndUpdate({ gameTitle: houserule.gameTitle }, { $push: { rules: newrules } });
-//     res.redirect(`/gearedmind/rules/${id}`)
+//     res.redirect(`/rules/${id}`)
 // }
 
 module.exports.addRuleToExistGame = async (req, res) => {
@@ -113,5 +113,5 @@ module.exports.addRuleToExistGame = async (req, res) => {
     newrule.save();
     houserule.save();
     //Houserule.findOneAndUpdate({ gameTitle: houserule.gameTitle }, { $push: { rules: newrules } });
-    res.redirect(`/gearedmind/rules/${id}`)
+    res.redirect(`/rules/${id}`)
 }

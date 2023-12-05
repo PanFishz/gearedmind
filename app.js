@@ -87,11 +87,11 @@ app.use((req, res, next) => {
 })
 
 
-app.use('/gearedmind/games', gameRoutes);
-app.use('/gearedmind/rules', ruleRoutes);
-app.use('/gearedmind/users', userRoutes);
+app.use('/games', gameRoutes);
+app.use('/rules', ruleRoutes);
+app.use('/users', userRoutes);
 
-app.get("/gearedmind", catchAsync(gearedmind.index));
+app.get("/", catchAsync(gearedmind.index));
 
 app.all('*', gearedmind.pageNotFound)
 
@@ -100,5 +100,5 @@ app.use(gearedmind.error)
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-    console.log(`listening on port ${port}.`)
+    console.log(`listening on port ${port}`)
 })

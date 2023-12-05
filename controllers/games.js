@@ -9,7 +9,7 @@ module.exports.showGame = async (req, res) => {
     })
     if (!game) {
         req.flash('error', 'Game not found')
-        res.redirect('/gearedmind')
+        res.redirect('/')
     }
     res.render('games/show', { game })
 }
@@ -22,7 +22,7 @@ module.exports.postGameReview = async (req, res) => {
     await review.save();
     await game.save();
     req.flash('success', 'Successfully submited a review');
-    res.redirect(`/gearedmind/games/${game._id}`)
+    res.redirect(`/games/${game._id}`)
 }
 
 module.exports.deleteGameReview = async (req, res) => {
@@ -30,5 +30,5 @@ module.exports.deleteGameReview = async (req, res) => {
     await Gmgame.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
     await Review.findByIdAndDelete(reviewId)
     req.flash('success', 'Successfully deleted a review');
-    res.redirect(`/gearedmind/games/${id}`)
+    res.redirect(`/games/${id}`)
 }

@@ -37,15 +37,14 @@
 
                 <div class="card-body">
                     <button class="btn btn-primary"><a href="#" class="card-link">Buy</a></button>
-                    <button class="btn btn-primary"></buttonclass><a href="/gearedmind"
-                            class="card-link">Back</a></button>
+                    <button class="btn btn-primary"></buttonclass><a href="" class="card-link">Back</a></button>
                 </div>
             </div>
             <div class="card col-lg-6 mx-auto px-0 align-items-center">
                 <% if(currentUser) { %>
 
                     <h2 class="card-title">leave a review</h2>
-                    <form action="/gearedmind/games/<%=game._id%>" method="POST" class="mb-3 validated-form" novalidate>
+                    <form action="/games/<%=game._id%>" method="POST" class="mb-3 validated-form" novalidate>
                         <div class="mb-3">
                             <label class="form-label" for="rating">Rating</label>
                             <fieldset class="starability-basic">
@@ -93,8 +92,7 @@
                                             <%= review.body %>
 
                                         </p>
-                                        <form
-                                            action="/gearedmind/games/<%=game._id%>/reviews/<%=review._id%>?_method=DELETE"
+                                        <form action="/games/<%=game._id%>/reviews/<%=review._id%>?_method=DELETE"
                                             method="POST">
                                             <% if(currentUser && review.author.equals(currentUser._id)) { %>
                                                 <button class="btn btn-sm btn-danger">Delete</button>

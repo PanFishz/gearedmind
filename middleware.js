@@ -24,7 +24,7 @@ module.exports.validateRule = async function (req, res, next) {
 
         const { id } = req.params;
         const houserule = await Houserule.findById(id);
-        return res.redirect(`/gearedmind/rules/${id}`)
+        return res.redirect(`/rules/${id}`)
 
 
     } else {
@@ -37,7 +37,7 @@ module.exports.isLoggedIn = function (req, res, next) {
     if (!req.isAuthenticated()) {
         req.session.returnTo = req.originalUrl
         req.flash('error', 'You must be logged in first')
-        return res.redirect('/gearedmind/users/login')
+        return res.redirect('/users/login')
     }
     next();
 
@@ -48,7 +48,7 @@ module.exports.isAuthor = async (req, res, next) => {
     const review = await Review.findById(reviewId);
     if (!review.author.equals(req.user._id)) {
         req.flash('error', 'You do not have permission to do that!');
-        return res.redirect(`/gearedmind/games/${id}`);
+        return res.redirect(`/games/${id}`);
     }
     next();
 }
@@ -59,7 +59,7 @@ module.exports.isRuleAuthor = async (req, res, next) => {
     console.log(ruleId)
     if (!rule.author.equals(req.user._id)) {
         req.flash('error', 'You do not have permission to do that!');
-        return res.redirect(`/gearedmind/rules/${id}`);
+        return res.redirect(`/rules/${id}`);
     }
     next();
 }
