@@ -45,7 +45,7 @@ const store = MongoStore.create({
     mongoUrl: dbUrl,
     touchAfter: 24 * 60 * 60,
     crypto: {
-        secret
+        secret: secret
     }
 });
 
@@ -100,5 +100,5 @@ app.use(gearedmind.error)
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-    console.log(`listening on port ${port}.ll`)
+    console.log(`listening on port ${port}.`)
 })
