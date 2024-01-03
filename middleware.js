@@ -4,7 +4,7 @@ const Review = require('./models/review.js')
 const Rule = require('./models/rule.js')
 const Houserule = require('./models/houserules.js')
 
-//cant use arrow function here must use function() & module.exports
+//can't use arrow function here must use function() & module.exports
 module.exports.validateReview = function (req, res, next) {
     const { error } = reviewSchema.validate(req.body);
     if (error) {
@@ -18,7 +18,7 @@ module.exports.validateReview = function (req, res, next) {
 module.exports.validateRule = async function (req, res, next) {
     const { error } = ruleSchema.validate(req.body);
     if (error) {
-        req.flash('error', 'Rule must not be empty')
+        req.flash('error', 'Rule must not be empty/insufficient length')
         // const msg = error.details.map(el => el.message).join(',')
         // throw new ExpressError(msg, 400)
 

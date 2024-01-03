@@ -11,6 +11,7 @@ db.once("open", () => {
 });
 
 const seedDB = async () => {
+    //delete b4 repopulate db
     await Gmgame.deleteMany({});
     //console.log(gmgames['gmgames'])
     // gmgames is {gmgames: [{}, {}]}
@@ -24,3 +25,5 @@ const seedDB = async () => {
 seedDB().then(() => {
     mongoose.connection.close();
 })
+
+//in terminal call "node seeds/games" (automatically run "seeds/games/index.js" )to reseed/repopulate

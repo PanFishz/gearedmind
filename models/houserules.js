@@ -19,7 +19,13 @@ const houserulesSchema = new Schema({
     ]
 })
 
+//can make virtual, but not efficient, see controllers/rules.js
+
+// houserulesSchema.virtual('lowercase').get(function () {
+//     return this.gameTitle.toLowerCase();
+// });
 
 
-module.exports = mongoose.model('Houserule', houserulesSchema)
+
+module.exports = mongoose.model('Houserule', houserulesSchema);
 

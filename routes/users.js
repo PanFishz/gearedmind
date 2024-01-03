@@ -8,6 +8,7 @@ const { storeReturnTo } = require('../middleware')
 router.route('/register')
     .get(users.renderRegistrationForm)
     .post(catchAsync(users.registrationNewUser))
+// code above groups routes below, because both share the same path "/register"
 // router.get('/register', users.renderRegistrationForm)
 // router.post('/register', catchAsync(users.registrationNewUser))
 
@@ -16,7 +17,6 @@ router.route('/login')
     .post(storeReturnTo, passport.authenticate('local', { failureFlash: true, failureRedirect: '/gearedmind/users/login' }),
         users.loginUser)
 // router.get('/login', users.renderLoginForm)
-
 // router.post('/login', storeReturnTo, passport.authenticate('local', { failureFlash: true, failureRedirect: '/gearedmind/users/login' }),
 //     users.loginUser)
 

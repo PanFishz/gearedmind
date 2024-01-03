@@ -23,6 +23,7 @@ module.exports.postNewRule = async (req, res) => {
     newgame.rules.push(newrule)
     await newrule.save();
     await newgame.save();
+    req.flash('success', 'Successfully submited a new rule');
     res.redirect('/rules')
 }
 
@@ -66,7 +67,7 @@ module.exports.editRule = async (req, res) => {
         })
     }
     //const updatedHouserule = await Rule.findByIdAndUpdate(ruleid, { rule: req.body.rules })
-    req.flash('success', 'Successfully updated campground!');
+    req.flash('success', 'Successfully updated this rule!');
     res.redirect(`/rules/${id}`)
 }
 
@@ -75,7 +76,7 @@ module.exports.deleteRule = async (req, res) => {
     //1. pull rule reference from game, 2. then delete the rule itself
     await Houserule.findByIdAndUpdate(id, { $pull: { rule: ruleId } });
     await Rule.findByIdAndDelete(ruleId)
-
+    req.flash('success', 'Successfully deleted');
     res.redirect(`/rules/${id}`)
 }
 
@@ -112,6 +113,7 @@ module.exports.addRuleToExistGame = async (req, res) => {
     houserule.rules.push(newrule);
     newrule.save();
     houserule.save();
+    req.flash('success', 'Successfully added a rule');
     //Houserule.findOneAndUpdate({ gameTitle: houserule.gameTitle }, { $push: { rules: newrules } });
     res.redirect(`/rules/${id}`)
 }

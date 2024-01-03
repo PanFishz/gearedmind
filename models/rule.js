@@ -21,8 +21,8 @@ const ruleSchema = new Schema({
     }
 
 
-})
+});
 
 
 
-module.exports = mongoose.model('Rule', ruleSchema)
+module.exports = mongoose.model('Rule', ruleSchema);

@@ -8,6 +8,7 @@
 // module.exports.designer = ["Don Meyers", "Don Meyers Sr. and Jr."];
 // module.exports.artist = ["Don Meyers", "N/A"];
 
+// preset data
 module.exports.gmgames = [{
     title: "Scence and Revenge",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos temporibus quod mollitia",
