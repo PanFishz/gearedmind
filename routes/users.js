@@ -12,6 +12,7 @@ router.route('/register')
 // router.get('/register', users.renderRegistrationForm)
 // router.post('/register', catchAsync(users.registrationNewUser))
 
+
 router.route('/login')
     .get(users.renderLoginForm)
     .post(storeReturnTo, passport.authenticate('local', { failureFlash: true, failureRedirect: '/gearedmind/users/login' }),

@@ -7,7 +7,9 @@
                 <div class="card col-lg-6 px-0 align-items-center">
                     <div class="card-body col-10 col-lg-8 text-center">
                         <h5 class="card-title">
-                            <%= houserule.gameTitle %>
+                            <a href="/rules/<%= houserule._id%>">
+                                <%= houserule.gameTitle %>
+                            </a>
                         </h5>
                         <% if (houserule.rules[0].images.length> 0) { %>
                             <img src="<%=houserule.rules[0].images[0].url%>"" class=" d-block w-100" alt="...">
@@ -32,8 +34,8 @@
                     <div class="card-body">
                         <button class="btn btn-primary"><a href="/rules/<%= houserule._id%>" class="card-link">Learn
                                 More</a></button>
-                        <button class="btn btn-primary"></buttonclass><a href="/rules/<%= houserule._id%>"
-                                class="card-link">Feedback</a></button>
+                        <!-- <button class="btn btn-primary"></buttonclass><a href="/rules/<%= houserule._id%>"
+                                class="card-link">Feedback</a></button> -->
                     </div>
                 </div>
                 <% }%>

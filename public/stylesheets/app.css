@@ -144,3 +144,11 @@ footer {
     color: blueviolet;
     width: 300px;
 }
+
+a {
+    color: rgb(252, 187, 68)
+}
+
+h5 a {
+    text-decoration-line: none;
+}

@@ -8,7 +8,9 @@
                     <img class="img-fluid" src="/<%= gmgame.image %>" class="card-img-top" alt="...">
                     <div class="card-body col-10 col-lg-8 text-center">
                         <h5 class="card-title">
-                            <%= gmgame.title %>
+                            <a href="/games/<%= gmgame._id%>">
+                                <%= gmgame.title %>
+                            </a>
                         </h5>
                         <p class="card-text">
                             <%= gmgame.description %>
@@ -34,8 +36,8 @@
                     </ul>
 
                     <div class="card-body">
-                        <button class="btn btn-primary"><a href="/games/<%= gmgame._id%>"
-                                class="card-link">Buy</a></button>
+                        <!-- <button class="btn btn-primary"><a href="/games/<%= gmgame._id%>"
+                                class="card-link">Buy</a></button> -->
                         <button class="btn btn-primary"></buttonclass><a href="/games/<%= gmgame._id%>"
                                 class="card-link">Learn
                                 More</a></button>

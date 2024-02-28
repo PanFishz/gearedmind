@@ -10,6 +10,7 @@ module.exports.showAllRules = async (req, res) => {
     res.render('rules/index', { houserules })
 }
 
+
 module.exports.postNewRule = async (req, res) => {
     const { gameTitle, rule } = req.body;
     let newgame = await Houserule.findOne({ gameTitle_lower: gameTitle.toLowerCase() })

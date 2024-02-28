@@ -36,7 +36,7 @@ module.exports.validateRule = async function (req, res, next) {
 module.exports.isLoggedIn = function (req, res, next) {
     if (!req.isAuthenticated()) {
         req.session.returnTo = req.originalUrl
-        req.flash('error', 'You must be logged in first')
+        req.flash('error', 'You must be logged in first.')
         return res.redirect('/users/login')
     }
     next();
@@ -56,7 +56,6 @@ module.exports.isAuthor = async (req, res, next) => {
 module.exports.isRuleAuthor = async (req, res, next) => {
     const { id, ruleId } = req.params;
     const rule = await Rule.findById(ruleId);
-    console.log(ruleId)
     if (!rule.author.equals(req.user._id)) {
         req.flash('error', 'You do not have permission to do that!');
         return res.redirect(`/rules/${id}`);

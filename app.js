@@ -17,6 +17,7 @@ const catchAsync = require('./utils/catchAsync.js');
 //seesion cookie
 const session = require('express-session');
 
+//MongoDB session store for Connect and Express written in Typescript.
 const MongoStore = require('connect-mongo');
 
 //flash messages like "sucessfully logged in"
@@ -101,8 +102,6 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 app.use((req, res, next) => {
-    //console.log(req.session.returnTo)
-
     res.locals.currentUser = req.user;
     res.locals.success = req.flash('success');
     res.locals.error = req.flash('error');
@@ -115,6 +114,8 @@ app.use((req, res, next) => {
 app.use('/games', gameRoutes);
 app.use('/rules', ruleRoutes);
 app.use('/users', userRoutes);
+
+
 
 //index homepage
 app.get("/", catchAsync(gearedmind.index));
